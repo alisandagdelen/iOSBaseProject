@@ -14,6 +14,11 @@
 		3B96A19B1F1129BB0049F129 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B96A1991F1129BB0049F129 /* LaunchScreen.storyboard */; };
 		3B96A1A61F1129BC0049F129 /* BaseProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B96A1A51F1129BC0049F129 /* BaseProjectTests.swift */; };
 		3B96A1B11F1129BC0049F129 /* BaseProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B96A1B01F1129BC0049F129 /* BaseProjectUITests.swift */; };
+		3B96A1C11F1199480049F129 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B96A1C01F1199480049F129 /* DataService.swift */; };
+		3B96A1C41F11A1640049F129 /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B96A1C31F11A1640049F129 /* BaseObject.swift */; };
+		3B96A1C71F11A2740049F129 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B96A1C61F11A2740049F129 /* RealmHelper.swift */; };
+		3B96A1C91F11B62F0049F129 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B96A1C81F11B62F0049F129 /* Constants.swift */; };
+		3B96A1CB1F123E720049F129 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B96A1CA1F123E720049F129 /* Extensions.swift */; };
 		BF10E9E3C7B89F36FFCCA744 /* Pods_BaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65DCCBD47DB3A123FFFA2A5 /* Pods_BaseProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +55,11 @@
 		3B96A1AC1F1129BC0049F129 /* BaseProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaseProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B96A1B01F1129BC0049F129 /* BaseProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProjectUITests.swift; sourceTree = "<group>"; };
 		3B96A1B21F1129BC0049F129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B96A1C01F1199480049F129 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		3B96A1C31F11A1640049F129 /* BaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
+		3B96A1C61F11A2740049F129 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		3B96A1C81F11B62F0049F129 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3B96A1CA1F123E720049F129 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F65DCCBD47DB3A123FFFA2A5 /* Pods_BaseProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +114,7 @@
 		3B96A18F1F1129BB0049F129 /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
+				3B96A1BE1F11991A0049F129 /* Models */,
 				3B96A1901F1129BB0049F129 /* AppDelegate.swift */,
 				3B96A1921F1129BB0049F129 /* ViewController.swift */,
 				3B96A1941F1129BB0049F129 /* Main.storyboard */,
@@ -130,6 +141,42 @@
 				3B96A1B21F1129BC0049F129 /* Info.plist */,
 			);
 			path = BaseProjectUITests;
+			sourceTree = "<group>";
+		};
+		3B96A1BE1F11991A0049F129 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3B96A1C51F11A2570049F129 /* Helpers */,
+				3B96A1C21F11A1520049F129 /* Entities */,
+				3B96A1BF1F11992E0049F129 /* Services */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3B96A1BF1F11992E0049F129 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3B96A1C01F1199480049F129 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		3B96A1C21F11A1520049F129 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3B96A1C31F11A1640049F129 /* BaseObject.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		3B96A1C51F11A2570049F129 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3B96A1C61F11A2740049F129 /* RealmHelper.swift */,
+				3B96A1C81F11B62F0049F129 /* Constants.swift */,
+				3B96A1CA1F123E720049F129 /* Extensions.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		DF33DE30D2FF0A818DC4E406 /* Pods */ = {
@@ -334,8 +381,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B96A1C11F1199480049F129 /* DataService.swift in Sources */,
+				3B96A1C71F11A2740049F129 /* RealmHelper.swift in Sources */,
+				3B96A1C41F11A1640049F129 /* BaseObject.swift in Sources */,
 				3B96A1931F1129BB0049F129 /* ViewController.swift in Sources */,
 				3B96A1911F1129BB0049F129 /* AppDelegate.swift in Sources */,
+				3B96A1C91F11B62F0049F129 /* Constants.swift in Sources */,
+				3B96A1CB1F123E720049F129 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +636,7 @@
 				3B96A1B71F1129BC0049F129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B96A1B81F1129BC0049F129 /* Build configuration list for PBXNativeTarget "BaseProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +645,7 @@
 				3B96A1BA1F1129BC0049F129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B96A1BB1F1129BC0049F129 /* Build configuration list for PBXNativeTarget "BaseProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -600,6 +654,7 @@
 				3B96A1BD1F1129BC0049F129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
