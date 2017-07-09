@@ -2,3 +2,8 @@
 #
 build/
 Pods/
+*.pbxuser
+!default.pbxuser
+*.hmap
+*.ipa
+*.xcuserstate
