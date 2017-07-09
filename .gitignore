@@ -7,3 +7,5 @@ Pods/
 *.hmap
 *.ipa
 *.xcuserstate
+xcuserstate/
+xuserdata/*
