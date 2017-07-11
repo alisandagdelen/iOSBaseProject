@@ -43,7 +43,7 @@ class BaseObject:Object, Mappable {
         updatedAt   <-  (map["updatedAt"], DateTransform())
     }
     
-    class func objectForPrimaryKey<T:Object>(_ type: T.Type, key:String) -> T? {
+    class func objectWithId<T:Object>(_ type: T.Type, key:String) -> T? {
         return _realm.object(ofType: type, forPrimaryKey:key as AnyObject)
     }
 }

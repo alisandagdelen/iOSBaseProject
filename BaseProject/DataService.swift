@@ -86,11 +86,11 @@ class DataService{
         }
     }
     
-    private func getObjects(type:BaseObject.Type, method:Alamofire.HTTPMethod, path:String? , params:[String : Any]?, _ result:@escaping BaseArrayBlock){
+    private func getObjects<T:BaseObject>(type:BaseObject.Type, method:Alamofire.HTTPMethod, path:String? , params:[String : Any]?, _ result:@escaping (_ object:[T]?, _ error: Error?)-> Void){
         
         let url:String! = path ?? type.url()
         
-        callRequest(Router(method: .get, path: url, params: params)).responseArray { (response:DataResponse<[BaseObject]>) -> Void in
+        callRequest(Router(method: .get, path: url, params: params)).responseArray { (response:DataResponse<[T]>) -> Void in
             if let object = response.result.value {
                 result(object, nil)
             }else {
