@@ -19,6 +19,8 @@
 		3B96A1C71F11A2740049F129 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B96A1C61F11A2740049F129 /* RealmHelper.swift */; };
 		3B96A1C91F11B62F0049F129 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B96A1C81F11B62F0049F129 /* Constants.swift */; };
 		3B96A1CB1F123E720049F129 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B96A1CA1F123E720049F129 /* Extensions.swift */; };
+		3BBA987A1F1551D2003BAEDE /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA98791F1551D2003BAEDE /* BaseVC.swift */; };
+		3BBA987C1F155F65003BAEDE /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA987B1F155F65003BAEDE /* ContainerVC.swift */; };
 		BF10E9E3C7B89F36FFCCA744 /* Pods_BaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65DCCBD47DB3A123FFFA2A5 /* Pods_BaseProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		3B96A1C61F11A2740049F129 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		3B96A1C81F11B62F0049F129 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3B96A1CA1F123E720049F129 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3BBA98791F1551D2003BAEDE /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		3BBA987B1F155F65003BAEDE /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		F65DCCBD47DB3A123FFFA2A5 /* Pods_BaseProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,6 +118,7 @@
 		3B96A18F1F1129BB0049F129 /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
+				3BBA98781F1551BD003BAEDE /* ViewControllers */,
 				3B96A1BE1F11991A0049F129 /* Models */,
 				3B96A1901F1129BB0049F129 /* AppDelegate.swift */,
 				3B96A1921F1129BB0049F129 /* ViewController.swift */,
@@ -177,6 +182,15 @@
 				3B96A1CA1F123E720049F129 /* Extensions.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		3BBA98781F1551BD003BAEDE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BBA98791F1551D2003BAEDE /* BaseVC.swift */,
+				3BBA987B1F155F65003BAEDE /* ContainerVC.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		DF33DE30D2FF0A818DC4E406 /* Pods */ = {
@@ -384,6 +398,8 @@
 				3B96A1C11F1199480049F129 /* DataService.swift in Sources */,
 				3B96A1C71F11A2740049F129 /* RealmHelper.swift in Sources */,
 				3B96A1C41F11A1640049F129 /* BaseObject.swift in Sources */,
+				3BBA987C1F155F65003BAEDE /* ContainerVC.swift in Sources */,
+				3BBA987A1F1551D2003BAEDE /* BaseVC.swift in Sources */,
 				3B96A1931F1129BB0049F129 /* ViewController.swift in Sources */,
 				3B96A1911F1129BB0049F129 /* AppDelegate.swift in Sources */,
 				3B96A1C91F11B62F0049F129 /* Constants.swift in Sources */,
