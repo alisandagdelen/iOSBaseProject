@@ -11,7 +11,7 @@ import RealmSwift
 import ObjectMapper
 
 class BaseObject:Object, Mappable {
-
+    
     dynamic var id:String = UUID().uuidString
     dynamic var createdAt:Date = Date()
     dynamic var updatedAt:Date = Date()
@@ -42,7 +42,7 @@ class BaseObject:Object, Mappable {
             id  <- map["id"]
         }
         else {
-            if id == ""  { 
+            if id == ""  {
                 id  <- map["id"]
             }
         }
@@ -118,10 +118,10 @@ class BaseObject:Object, Mappable {
                     newObject = _realm.create(type, value:baseObject, update:true)
                 }
             }
-
+            
         }
         else {
-                newObject = _realm.create(type, value:baseObject, update:false)
+            newObject = _realm.create(type, value:baseObject, update:false)
         }
         
         
