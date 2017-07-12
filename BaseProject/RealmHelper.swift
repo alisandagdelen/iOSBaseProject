@@ -10,4 +10,58 @@ import Foundation
 import RealmSwift
 import Realm
 
+private let schemaVersion:UInt64 = 1
 var _realm:Realm!
+
+
+public func refreshRealm() {
+    do {
+        let config = Realm.Configuration(schemaVersion:schemaVersion)
+        Realm.Configuration.defaultConfiguration = config
+        try internalRealm = Realm()
+    }
+    catch {
+        print("Cannot create Realm instance!")
+    }
+}
+
+func beginWrite() {
+    if !_realm.isInWriteTransaction {
+        _realm.beginWrite()
+    }
+}
+
+func beginWrite2() -> Bool {
+    if !_realm.isInWriteTransaction {
+        _realm.beginWrite()
+        return true
+    }
+    
+    return false
+}
+
+func commitWrite() {
+    if _realm.isInWriteTransaction {
+        do {
+            try _realm.commitWrite()
+        }
+        catch {
+            print("!!! REALM CommitWrite FAILED !!!")
+        }
+    }
+}
+
+
+func commitWrite2() -> Bool {
+    if _realm.isInWriteTransaction {
+        do {
+            try _realm.commitWrite()
+            return true
+        }
+        catch {
+            print("Local Object update failed!")
+        }
+    }
+    
+    return false
+}
