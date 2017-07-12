@@ -33,7 +33,8 @@ public extension Date {
         return date
     }
     
-    public static func dateFromDisplayString (_ format: String, dateString:String?, timeZone:TimeZone! = TimeZone(identifier:"UTC")) -> Date? { //! = NSTimeZone(name:"UTC")
+    public static func dateFromDisplayString (_ format: String, dateString:String?, timeZone:TimeZone! = TimeZone(identifier:"UTC")) -> Date? {
+        
         if dateString == nil {
             return nil
         }
@@ -43,5 +44,56 @@ public extension Date {
         dateFormat.dateFormat = format
         let date = dateFormat.date(from: dateString!)
         return date
+    }
+}
+
+extension String {
+    
+    func isValidEmail() -> Bool {
+        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest.evaluate(with: self)
+        return result
+    }
+    func toDictionary() -> [String: Any]? {
+        if let data = data(using:.utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with:data, options:[]) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+    
+    func toDate()->Date?{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        return formatter.date(from: self)
+    }
+}
+
+extension Double {
+    
+    func percentageRepresentation() -> String {
+        
+        if floor(self) == self {
+            return "%\(Int(self))"
+        }
+        return "%\(self)"
+    }
+}
+
+extension UITextField {
+    func isNumericInput(shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if self.keyboardType == UIKeyboardType.numberPad || self.keyboardType == UIKeyboardType.decimalPad {
+            let nonNumericInput = CharacterSet(charactersIn: "0123456789.-").inverted
+            if let _ = string.rangeOfCharacter(from: nonNumericInput) {
+                return false
+            }
+        }
+        return true
     }
 }
