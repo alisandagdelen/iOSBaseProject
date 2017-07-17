@@ -6,7 +6,7 @@
 //  Copyright © 2017 alisandagdeleb. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 public extension Date {
