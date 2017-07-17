@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 import Realm
 
+private var internalRealm:Realm!
 private let schemaVersion:UInt64 = 1
 var _realm:Realm!
 
