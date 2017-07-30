@@ -12,7 +12,14 @@ import Realm
 
 private var internalRealm:Realm!
 private let schemaVersion:UInt64 = 1
-var _realm:Realm!
+public var _realm:Realm! {
+    
+    if internalRealm == nil {
+        refreshRealm()
+    }
+    
+    return internalRealm
+}
 
 
 public func refreshRealm() {
