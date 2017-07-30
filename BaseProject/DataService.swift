@@ -14,6 +14,9 @@ import ObjectMapper
 
 typealias BaseObjectBlock = (_ object:BaseObject?, _ error: Error?)-> Void
 typealias BaseArrayBlock = (_ object:[BaseObject]?, _ error: Error?)-> Void
+typealias GenericObjectBlock<T> = (_ object:T?, _ error: Error?)-> Void
+typealias GenericArrayBlock<T> = (_ object:[T]?, _ error: Error?)-> Void
+typealias ResultBlock = (_ succeeded:Bool, _ error:String?) -> ()
 
 class DataService{
     
@@ -86,7 +89,7 @@ class DataService{
         }
     }
     
-    private func getObjects<T:BaseObject>(type:BaseObject.Type, method:Alamofire.HTTPMethod, path:String? , params:[String : Any]?, _ result:@escaping (_ object:[T]?, _ error: Error?)-> Void){
+    private func getObjects<T:BaseObject>(type:BaseObject.Type, method:Alamofire.HTTPMethod, path:String? , params:[String : Any]?, _ result:@escaping GenericArrayBlock<T>) {
         
         let url:String! = path ?? type.url()
         
