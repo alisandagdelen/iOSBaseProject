@@ -12,6 +12,7 @@ PODS:
   - Realm/Headers (2.8.3)
   - RealmSwift (2.8.3):
     - Realm (= 2.8.3)
+  - SCLAlertView (0.7.0)
 
 DEPENDENCIES:
   - AlamofireObjectMapper
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - Fabric
   - ObjectMapper
   - RealmSwift
+  - SCLAlertView
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -28,7 +30,8 @@ SPEC CHECKSUMS:
   ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
 
-PODFILE CHECKSUM: bd6ad44ca62e3ca6d23f3d9ccaf60e8e4cf54aef
+PODFILE CHECKSUM: a85a1b6201e84ceed90124e176ffed721a797c77
 
 COCOAPODS: 1.2.1

@@ -11,4 +11,6 @@ target 'BaseProject' do
     pod 'ObjectMapper'
     pod 'RealmSwift'
     pod 'AlamofireObjectMapper'
+    
+    pod 'SCLAlertView'
 end
