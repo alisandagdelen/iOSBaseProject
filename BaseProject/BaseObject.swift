@@ -73,10 +73,17 @@ class BaseObject:Object, Mappable {
         return _realm.objects(type)
     }
     
+    class func saveLocal(_ obj:Any, isNew:Bool, isDirty:Bool=false) -> BaseObject! {
+        var changed = false
+        let savedObj = saveLocal(obj, isNew:isNew, isDirty:isDirty, changed:&changed)
+        return savedObj
+    }
+
     fileprivate class func saveLocal(_ obj:Any, isNew:Bool, isDirty:Bool=false, changed:inout Bool) -> BaseObject! {
         
         var baseObject:BaseObject!
-        
+        baseObject = obj as! BaseObject
+
         var newObject:BaseObject!
         let willCommit = beginWrite2()
         
