@@ -73,6 +73,38 @@ extension String {
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         return formatter.date(from: self)
     }
+    
+    public var isAlphaNumeric: Bool {
+        let hasLetters = rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
+        let hasNumbers = rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
+        let comps = components(separatedBy: .alphanumerics)
+        return comps.joined(separator: "").characters.count == 0 && hasLetters && hasNumbers
+    }
+    
+    func isValidPassword() -> Bool {
+        if self.characters.count >= 8 && self.isAlphaNumeric {
+            return true
+        }
+        return false
+    }
+
+}
+
+extension UIColor {
+    public convenience init(R: Int, G: Int, B: Int) {
+        self.init(red:CGFloat(R)/255.0, green:CGFloat(G)/255.0, blue:CGFloat(B)/255.0, alpha:1.0)
+    }
+    
+    public class func randomColor() -> UIColor {
+        
+        let randomRed:CGFloat = CGFloat(drand48())
+        
+        let randomGreen:CGFloat = CGFloat(drand48())
+        
+        let randomBlue:CGFloat = CGFloat(drand48())
+        
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+    }
 }
 
 extension Double {
@@ -97,3 +129,31 @@ extension UITextField {
         return true
     }
 }
+
+extension UIView {
+    
+    class func fromNib() -> UIView? {
+        let nib = UINib(nibName:self.className(), bundle:nil)
+        let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView
+        return view
+    }
+    
+    class func nibFile() -> UINib? {
+        let nib = UINib(nibName:self.className(), bundle:nil)
+        return nib
+    }
+}
+
+extension NSObject {
+    
+    class func className() -> String {
+        let components:Array<String> = self.description().components(separatedBy: ".")
+        if components.count > 0 {
+            return components.last!
+        }
+        else {
+            return ""
+        }
+    }
+}
+
