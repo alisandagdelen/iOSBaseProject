@@ -64,17 +64,17 @@ class AlertView {
         case .wait:
             hideWhenBackgroundViewIsTapped = false
             if alertSubTitle.isEmpty {
-                alertSubTitle = "Lütfen bekleyiniz."
+                alertSubTitle = "Please wait."
             }
         case .dialog:
             showCircularIcon = false
         case .success:
             if alertTitle.isEmpty {
-                alertTitle = "İşlem Başarılı"
+                alertTitle = "Successful "
             }
         case .error:
             if alertTitle.isEmpty {
-                alertTitle = "İşlem Başarısız"
+                alertTitle = "Operation Failed!"
             }
         case .edit(_), .info:
             hideWhenBackgroundViewIsTapped = false
@@ -96,7 +96,7 @@ class AlertView {
         let alertView = SCLAlertView(appearance:appearance)
         
         
-        let closeButtonTitle:String? = showCloseButton ? "Tamam" : nil
+        let closeButtonTitle:String? = showCloseButton ? "Ok" : nil
         
         DispatchQueue.main.async {
             switch type {
